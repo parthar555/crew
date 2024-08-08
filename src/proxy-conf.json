@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://api.spacexdata.com/v4/crew",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}

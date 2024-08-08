@@ -1,0 +1,15 @@
+<div>test</div>
+
+<ul *ngIf="allCrew.length > 0">
+  <li *ngFor="let crew of allCrew">
+    Name - {{crew && crew.name || ''}}<br/>
+    Agency - {{crew && crew.agency || ''}}<br/>
+    Image - <img [src]="crew.image" height="100" width="100"><br/>
+    Wikipedia - {{crew && crew.wikipedia || ''}}<br/>
+    Status - {{crew && crew.status || ''}}<br/>
+    Id - {{crew && crew.id || ''}}<br/>
+    <p *ngFor="let launches of crew.launches">
+      launches-  {{launches}}
+    </p>
+  </li>
+</ul>
