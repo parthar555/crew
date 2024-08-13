@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServices } from './services/api-services.service';
-import { CreaModel } from './Model/AppModel';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +7,8 @@ import { CreaModel } from './Model/AppModel';
 })
 export class AppComponent implements OnInit {
   title = 'creaw-app';
-  constructor(private services: ApiServices) {}
-
-  allCrew: CreaModel[] = []
+  constructor() {}
 
   ngOnInit(): void {
-    this.getAllCrewList();
-  }
-
-  getAllCrewList() {
-    this.services.getCrewList().subscribe((data) => {
-      this.allCrew = data
-    })
   }
 }

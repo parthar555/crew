@@ -1,15 +1,10 @@
-<div>test</div>
+<header></header>
+<nav>
+  <a routerLink="/home">Home</a>&nbsp; &nbsp;
+  <a routerLink="/users">Users</a>&nbsp; &nbsp;
+  <a routerLink="/users/create">Create Users</a>
+</nav>
 
-<ul *ngIf="allCrew.length > 0">
-  <li *ngFor="let crew of allCrew">
-    Name - {{crew && crew.name || ''}}<br/>
-    Agency - {{crew && crew.agency || ''}}<br/>
-    Image - <img [src]="crew.image" height="100" width="100"><br/>
-    Wikipedia - {{crew && crew.wikipedia || ''}}<br/>
-    Status - {{crew && crew.status || ''}}<br/>
-    Id - {{crew && crew.id || ''}}<br/>
-    <p *ngFor="let launches of crew.launches">
-      launches-  {{launches}}
-    </p>
-  </li>
-</ul>
+<router-outlet></router-outlet>
+
+<footer></footer>
