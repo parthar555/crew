@@ -1,1 +1,41 @@
-<p>create-users works!</p>
+<h1>Create Users</h1>
+
+<div>
+    <form [formGroup]="userForm">
+        <p>
+            <mat-label>First Name</mat-label>
+            <input id="firstName" formControlName="firstName">
+            <span *ngIf="userForm.get('firstName')?.invalid && userForm.get('firstName')?.touched">
+                First Name is required
+            </span>
+        </p>
+        <p>
+            <mat-label>Last Name</mat-label>
+            <input id="lastName" formControlName="lastName">
+            <span *ngIf="userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched">
+                Last Name is required
+            </span>
+        </p>
+        <p>
+            <mat-label>Email</mat-label>
+            <input id="email" formControlName="email">
+            <span *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+                First Name is required
+            </span>
+        </p>
+        <p>
+            <mat-label>Password</mat-label>
+            <input type="password" id="password" formControlName="password">
+            <span *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+                Password Must contains upper case, lower case and special character
+            </span>
+        </p>
+        <p>
+            <mat-label>Re Type Password</mat-label>
+            <input type="password" id="reTypePassword" formControlName="reTypePassword">
+            <span *ngIf="userForm.get('reTypePassword')?.touched && userForm.errors?.['passwordNotMatched']">
+                Password Mismatched
+            </span>
+        </p> 
+    </form>
+</div>
