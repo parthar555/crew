@@ -21,7 +21,8 @@ export class CreateUsersComponent implements OnInit {
       },
       {
         validators: this.validatesPasswordEqual
-      });
+      }
+    );
   }
 
   public validatesPasswordEqual(c: AbstractControl) {

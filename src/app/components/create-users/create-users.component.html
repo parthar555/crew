@@ -36,6 +36,8 @@
             <span *ngIf="userForm.get('reTypePassword')?.touched && userForm.errors?.['passwordNotMatched']">
                 Password Mismatched
             </span>
-        </p> 
+        </p>
+
+        <button [disabled]="!userForm.valid">Save</button>
     </form>
 </div>
