@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -24,7 +24,7 @@ export class CreateUsersComponent implements OnInit {
       }
     );
   }
-
+  
   public validatesPasswordEqual(c: AbstractControl) {
     return c.value.password === c.value.reTypePassword ? null : {passwordNotMatched: true}
   }
