@@ -7,3 +7,14 @@ export interface CreaModel {
     status: string
     id: string
 }
+
+export interface ProductModel {
+    userId: number;
+    id: number;
+    title: string;
+    completed: boolean;
+}
+
+export interface ProductListModel {
+    productList: ProductModel[]
+}
