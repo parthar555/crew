@@ -4,12 +4,14 @@ import { ProductsComponent } from '../../components/products/products.component'
 import { ProductDetailsComponent } from '../../components/product-details/product-details.component';
 import { ProductMoreInfoComponent } from '../../components/product-more-info/product-more-info.component';
 import {MatTableModule} from '@angular/material/table';
+import { LinkDirective } from '../../directives/link.directive';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     ProductDetailsComponent,
-    ProductMoreInfoComponent
+    ProductMoreInfoComponent,
+    LinkDirective
   ],
   imports: [
     CommonModule,

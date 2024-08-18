@@ -19,4 +19,8 @@ export class ApiServices {
     getProductDetials(id: number): Observable<any> {
         return this.http.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
     }
+
+    saveUser(postData: any): Observable<any> {
+        return this.http.post(`https://jsonplaceholder.typicode.com/todos`, postData)
+    }
 }

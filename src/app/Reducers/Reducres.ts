@@ -1,10 +1,10 @@
 import { Action } from "@ngrx/store";
 import * as Actions from '../Actions/Actions';
-import {ProductListModel, ProductDetails} from '../Model/AppModel'
+import {StateModel} from '../Model/AppModel'
 
-const defaultState: any = {
+const defaultState: StateModel = {
     productList: [],
-    productDetails: ''
+    productDetails: {}
 }
 
 export function Reducers(state: any = defaultState, action: Action) {

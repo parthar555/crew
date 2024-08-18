@@ -23,3 +23,8 @@ export interface ProductListModel {
 export interface ProductDetails {
     productDetails: ProductModel
 }
+
+export interface StateModel {
+    productList: ProductModel[];
+    productDetails: ProductModel
+}

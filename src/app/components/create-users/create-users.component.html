@@ -20,7 +20,7 @@
             <mat-label>Email</mat-label>
             <input id="email" formControlName="email">
             <span *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
-                First Name is required
+                Please enter valid email
             </span>
         </p>
         <p>
@@ -38,6 +38,6 @@
             </span>
         </p>
 
-        <button [disabled]="!userForm.valid">Save</button>
+        <button (click)="saveUserDetails()">Save</button>
     </form>
 </div>
