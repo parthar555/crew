@@ -1,0 +1,21 @@
+<div>
+    <div>
+        Id : {{productDetails.id}}
+    </div>
+    <div>
+        UserId : {{productDetails.userId}}
+    </div>
+    <div>
+        title : {{productDetails.title}}
+    </div>
+    <div>
+        completed : {{productDetails.completed}}
+    </div>
+    <div>
+        price : {{productDetails.price}}
+    </div>
+</div>
+
+<p>
+    <app-product-more-info [productTitle]="productTitle" (redirctToProduct)="redirctToProduct()"></app-product-more-info>
+</p>

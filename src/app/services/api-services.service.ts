@@ -15,4 +15,8 @@ export class ApiServices {
     getListOfPrduct(): Observable<any> {
         return this.http.get('https://jsonplaceholder.typicode.com/todos');
     }
+
+    getProductDetials(id: number): Observable<any> {
+        return this.http.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    }
 }

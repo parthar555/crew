@@ -4,12 +4,13 @@ import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { CreateUsersComponent } from './components/create-users/create-users.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    redirectTo: 'home'
   },
   {
     path: 'home',
@@ -34,6 +35,11 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'product/:id',
+    component: ProductDetailsComponent,
     pathMatch: 'full'
   }
   
