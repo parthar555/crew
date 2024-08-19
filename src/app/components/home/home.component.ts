@@ -17,8 +17,15 @@ export class HomeComponent {
   }
 
   getAllCrewList() {
-    this.services.getCrewList().subscribe((data) => {
-      this.allCrew = data
-    })
+    this.services.getCrewList().subscribe(
+      {
+        next: (data: any) => {
+          this.allCrew = data;
+        },
+        error: (err: Error) => {
+          console.log(err)
+        }
+      }
+    )
   }
 }

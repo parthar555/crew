@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { ProductModule } from './modules/product/product.module';
 import { StoreModule } from '@ngrx/store';
 import { Reducers } from './Reducers/Reducres';
+import { ApiServices } from './services/api-services.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { Reducers } from './Reducers/Reducres';
     ProductModule,
     StoreModule.forRoot({state: Reducers}),
   ],
-  providers: [],
+  providers: [{provide: ApiServices, useClass: ApiServices}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

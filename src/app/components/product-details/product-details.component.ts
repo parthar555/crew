@@ -19,13 +19,20 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private store: Store<any>, private services: ApiServices, private router: Router) {}
 
   ngOnInit(): void {
-    this.services.getProductDetials(this.id).subscribe((data) => {
-      this.store.dispatch(new GetProductDetails(data));
-      this.store.select(getProductDetailsState).subscribe((pr) => {
-        this.productDetails = {...pr, price: 2000}
-        this.productTitle = this.productDetails.title;
-      })
-    })
+    this.services.getProductDetials(this.id).subscribe(
+      {
+        next: (data: any) => {
+          this.store.dispatch(new GetProductDetails(data));
+          this.store.select(getProductDetailsState).subscribe((pr) => {
+            this.productDetails = {...pr, price: 2000}
+            this.productTitle = this.productDetails.title;
+          })
+        },
+        error: (err: Error) => {
+          console.log(err.message)
+        }
+      }
+    )
   }
 
   redirctToProduct() {

@@ -1,6 +1,6 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, catchError } from "rxjs";
 
 @Injectable({
     providedIn: "root"
@@ -17,7 +17,7 @@ export class ApiServices {
     }
 
     getProductDetials(id: number): Observable<any> {
-        return this.http.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        return this.http.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
     }
 
     saveUser(postData: any): Observable<any> {

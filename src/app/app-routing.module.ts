@@ -35,12 +35,21 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'product/:id',
     component: ProductDetailsComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./modules/cart/cart.module').then(m => m.CartModule),
+    pathMatch: 'full'
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./modules/checkout/checkout.module').then(m => m.CheckoutModule)
   }
   
 ];
